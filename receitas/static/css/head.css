@@ -1,0 +1,72 @@
+:root {
+  --color-primary: #3b6d11;
+  --color-primary-hover: #2c5310;
+  --color-primary-dark: #173404;
+  --color-primary-dark-hover: #1f4508;
+  --color-primary-light: #eaf3de;
+  --color-primary-light-hover: #c0dd97;
+
+  --color-white: #fff;
+  --color-black: #000;
+
+  --color-dark-text: #2c2c2a;
+
+  --color-info-light: #cce5ff;
+  --color-debug-light: #cce5ff;
+  --color-success-light: #d4edda;
+  --color-alert-light: #fff3cd;
+  --color-warning-light: #fff3cd;
+  --color-error-light: #f8d7da;
+
+  --font-primary: 'Merriweather', serif;
+  --font-headings: 'Rye', cursive;
+
+  --spacing-gutter-large: 4rem;
+  --spacing-gutter-medium: 3rem;
+}
+
+
+* {
+    padding: 0px;
+    margin: 0;
+    box-sizing: border-box;
+      }
+
+html {
+  font-size: 62.5%
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: var(--font-primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-headings);
+}
+
+.container {
+  max-width: 144rem;
+  margin: 0 auto;
+  padding: var(--spacing-gutter-medium);
+}
+
+.main-header-container {
+  background: var(--color-primary-dark);
+}
+
+.main-logo {
+  text-decoration: none;
+  font-size: 4rem;
+  color: #ffff;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin:0 auto;
+}
+
+.main-logo-icon {
+  margin-right: 1rem;
+}
