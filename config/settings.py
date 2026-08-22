@@ -124,6 +124,9 @@ STATICFILES_DIRS = [
     BASE_DIR / 'global_static',
 ]
 
+# Pasta onde o comando 'collectstatic' reúne tudo
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 
 # Email
 # https://docs.djangoproject.com/en/6.1/topics/email/#topic-email-configuration
