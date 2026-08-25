@@ -1,28 +1,13 @@
-    <!-- Head -->
-{% include "receitas/partials/head.html" %}
+{% extends "global/base.html" %}
 
-<body>
-    <!-- Header -->
-    {% include "receitas/partials/header.html" %}
-
-    <!-- Search -->
-    {% include "receitas/partials/search.html" %}
-
-    <main class="main-content-container">
-        <div class="main-content main-content-list container">
-
-            <!-- Recipe -->
-            {% include "receitas/partials/recipe.html" %}
-            {% include "receitas/partials/recipe.html" %}
-            {% include "receitas/partials/recipe.html" %}
-            {% include "receitas/partials/recipe.html" %}
-            {% include "receitas/partials/recipe.html" %}
-            {% include "receitas/partials/recipe.html" %}
-
-        </div>
-    </main>
-    
-    <!-- Footer -->
-    {% include "receitas/partials/footer.html" %}
-
-</body>
+{% block content %}
+    <div class="main-content main-content-list container">
+        <!-- Recipe -->
+        {% include "receitas/partials/recipe.html" %}
+        {% include "receitas/partials/recipe.html" %}
+        {% include "receitas/partials/recipe.html" %}
+        {% include "receitas/partials/recipe.html" %}
+        {% include "receitas/partials/recipe.html" %}
+        {% include "receitas/partials/recipe.html" %}
+    </div>
+{% endblock content %}
