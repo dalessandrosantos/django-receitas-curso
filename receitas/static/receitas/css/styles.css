@@ -154,6 +154,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .recipe-list-item {
   max-width: 64rem;
+  height: fit-content;
 }
 
 .recipe-list-item:hover {
@@ -225,8 +226,6 @@ h1, h2, h3, h4, h5, h6 {
 .recipe-footer a:hover {
   filter: brightness(2);
 }
-
- 
 
 .main-content-detail .recipe-list-item {
   max-width: 84rem;
