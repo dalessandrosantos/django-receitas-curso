@@ -167,6 +167,13 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 2rem;
 }
 
+.recipe-title-container a {
+  padding: var(--spacing-gutter-medium);
+  padding-bottom: 2rem;
+  text-decoration: none;
+  color: var(--color-dark-text);
+}
+
 .recipe-author {
   padding: 0 var(--spacing-gutter-medium);
 }
@@ -235,6 +242,10 @@ h1, h2, h3, h4, h5, h6 {
 .recipe-list-item:hover {
   transform: scale(1.02);
   box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.preparation-steps {
+  padding: var(--spacing-gutter-medium);
 }
 
 .main-footer {
