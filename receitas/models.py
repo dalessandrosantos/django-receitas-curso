@@ -4,6 +4,12 @@ from django.contrib.auth.models import User
 class Categoria(models.Model):
     nome = models.CharField(max_length=65)
 
+    def __str__(self):
+        return self.nome
+
+    class Meta:
+        verbose_name = 'Categoria'
+        verbose_name_plural = 'Categorias'
 
 class Receita(models.Model):
     titulo = models.CharField(max_length=65)
