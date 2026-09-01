@@ -15,10 +15,16 @@
     </div>
 
     <div class="recipe-author">
-        <span class="recipe-author-item">
-            <i class="fas fa-user"></i>
-            {{ receita.autor.first_name }} {{ receita.autor.last_name }}
-        </span>
+
+        {% if receita.autor is not None %}
+            <span class="recipe-author-item">
+                <i class="fas fa-user"></i>
+                {% if receita.author.firts_name %}{% endif %}
+                    {{ receita.autor.first_name }} {{ receita.autor.last_name }}
+                {% else %}
+                    {{ receita.autor.username }}
+                {% endif %}
+            </span>
 
         <span class="recipe-author-item">
             <i class="fas fa-calendar-alt"></i>
