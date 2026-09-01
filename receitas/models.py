@@ -18,6 +18,8 @@ class Receita(models.Model):
     tempo_preparo = models.IntegerField()
     tempo_preparo_unidade = models.CharField(max_length=20, default='Minutos')
     modo_preparo = models.TextField()
+    rende_quantidade = models.IntegerField(default=1)
+    rende_unidade = models.CharField(max_length=30, default='Litro de água')
     criado_em = models.DateTimeField(auto_now_add=True)
     atualizado_em = models.DateTimeField(auto_now=True)
     publicado = models.BooleanField(default=False)

@@ -1,9 +1,17 @@
 from django.shortcuts import render
 from utils.receitas.factory import make_recipe
+from .models import Receita
 
 def home(request):
+    receitas = Receita.objects.all().order_by('-id')
     return render(request, 'receitas/paginas/home.html', context={
-        'receitas': [make_recipe() for _ in range(10)],
+        'receitas': receitas,
+    })
+
+def categoria(request, categoria_id):
+    receitas = Receita.objects.filter(categoria__id=categoria_id).order_by('-id')
+    return render(request, 'receitas/paginas/home.html', context={
+        'receitas': receitas,
     })
 
 def receita(request, id):

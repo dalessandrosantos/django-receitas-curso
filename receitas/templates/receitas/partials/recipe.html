@@ -1,59 +1,59 @@
 <div class="recipe recipe-list-item">
 
-    <a href="{% url "receitas-receita" receita.id %}">
-        <div class="recipe-cover">
-            <img src="{{ receita.cover.url }}" alt="Temporario">
-        </div>
-    </a>
+    {% if receita.capa %}
+        <a href="{% url "receitas-receita" receita.id %}">
+            <div class="recipe-cover">
+                <img src="{{ receita.capa.url }}" alt="{{ receita.titulo }}">
+            </div>
+        </a>
+    {% endif %}
 
     <div class="recipe-title-container">
-        <a href="{% url "receitas-receita"  receita.id %}">
-            <h2 class="recipe-title">{{ receita.title }}</h2>
-        </a>    
+        <a href="{% url "receitas-receita" receita.id %}">
+            <h2 class="recipe-title">{{ receita.titulo }}</h2>
+        </a>
     </div>
 
     <div class="recipe-author">
         <span class="recipe-author-item">
             <i class="fas fa-user"></i>
-            {{ receita.author.first_name }} {{ receita.author.last_name }}
+            {{ receita.autor.first_name }} {{ receita.autor.last_name }}
         </span>
 
         <span class="recipe-author-item">
             <i class="fas fa-calendar-alt"></i>
-            {{ receita.created_at|date:"d/m/Y" }}
+            {{ receita.criado_em|date:"d/m/Y" }}
         </span>
 
         <span class="recipe-author-item">
-            <a href="/recipes/category/cafe-da-manha">
-                <span>
-                    <i class="fas fa-layer-group"></i>
-                    {{ receita.category.name }}
-                </span>
+            <i class="fas fa-mug-hot"></i>
+            <a href="{% url 'categoria' receita.categoria.id %}">
+                {{ receita.categoria }}
             </a>
         </span>
     </div>
 
     <div class="recipe-content">
-        <p>{{ receita.description }}</p>
+        <p>{{ receita.descricao }}</p>
     </div>
 
     <div class="recipe-meta-container">
         <div class="recipe-meta recipe-preparation">
             <h3 class="recipe-meta-title">
-                <i class="fa-solid fa-mug-saucer"></i>
-                {{ receita.preparation_time }} {{ receita.preparation_time_unit }}
+                <i class="fa-solid fa-temperature-half"></i>
+                Tempo de preparo
             </h3>
             <div class="recipe-meta-text">
-                {{ receita.servings }} {{ receita.servings_unit }}
+                {{ receita.tempo_preparo }} {{ receita.tempo_preparo_unidade }}
             </div>
         </div>
         <div class="recipe-meta recipe-servings">
             <h3 class="recipe-meta-title">
                 <i class="fa-solid fa-arrows-rotate"></i>
-                Rende
+                Quantidade
             </h3>
             <div class="recipe-meta-text">
-                Rende 1 litro de água (aprox. 8 cevadas)
+                {{ receita.rende_quantidade }} {{ receita.rende_unidade }}
             </div>
         </div>
     </div>
@@ -69,7 +69,7 @@
 
     {% if is_detail_page is True %}
         <div class="preparation-steps">
-            {{ receita.preparation_steps|linebreaksbr }}
+            {{ receita.modo_preparo|linebreaksbr }}
         </div>
     {% endif %}
 

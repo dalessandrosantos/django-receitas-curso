@@ -174,8 +174,13 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-dark-text);
 }
 
+.recipe-title {
+  text-align: center;
+}
+
 .recipe-author {
   padding: 0 var(--spacing-gutter-medium);
+  text-align: center;
 }
 
 .recipe-content {
@@ -186,6 +191,7 @@ h1, h2, h3, h4, h5, h6 {
 .recipe-author-item {
   color: var(--color-gray-4);
   margin-right: 1rem;
+  white-space: nowrap;
 }
 
 .recipe-author a {
