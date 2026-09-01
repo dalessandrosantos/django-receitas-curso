@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_list_or_404
 from utils.receitas.factory import make_recipe
 from .models import Receita
 
@@ -11,12 +11,17 @@ def home(request):
     })
 
 def categoria(request, categoria_id):
-    receitas = Receita.objects.filter(
+    receitas = get_list_or_404(
+        Receita.objects.filter(
         categoria__id=categoria_id,
-        publicado=True
-    ).order_by('-id')
+        publicado=True,
+        ).order_by('-id')
+    )
+
+
     return render(request, 'receitas/paginas/categoria.html', context={
         'receitas': receitas,
+        'titulo': f'{receitas[0].categoria.nome} - Categoria | '
     })
 
 def receita(request, id):
