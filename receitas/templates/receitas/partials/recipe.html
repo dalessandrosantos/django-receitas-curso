@@ -25,12 +25,14 @@
             {{ receita.criado_em|date:"d/m/Y" }}
         </span>
 
-        <span class="recipe-author-item">
-            <i class="fas fa-mug-hot"></i>
-            <a href="{% url 'categoria' receita.categoria.id %}">
-                {{ receita.categoria }}
-            </a>
-        </span>
+        {% if receita.categoria is not None %}
+            <span class="recipe-author-item">
+                <i class="fas fa-mug-hot"></i>
+                <a href="{% url 'categoria' receita.categoria.id %}">
+                    {{ receita.categoria }}
+                </a>
+            </span>
+        {% endif %}
     </div>
 
     <div class="recipe-content">

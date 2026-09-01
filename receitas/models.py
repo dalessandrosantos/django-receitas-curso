@@ -24,7 +24,12 @@ class Receita(models.Model):
     atualizado_em = models.DateTimeField(auto_now=True)
     publicado = models.BooleanField(default=False)
     capa = models.ImageField(upload_to='receitas/capas/%Y/%m/%d/')
-    categoria = models.ForeignKey(Categoria, on_delete=models.SET_NULL, null=True)
+    categoria = models.ForeignKey(
+        Categoria, 
+        on_delete=models.SET_NULL, 
+        null=True, blank=True, 
+        default=None
+    )
     autor = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
