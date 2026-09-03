@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User # Importa o modelo padrão do Django para controle de usuários e login
 
 class Categoria(models.Model):
     nome = models.CharField(max_length=65)
