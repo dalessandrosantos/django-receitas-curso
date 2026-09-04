@@ -1,9 +1,6 @@
-from django.test import TestCase
-from django.urls import reverse, resolve
-from receitas import views
-
-# reverse: nome da URL → caminho
-# resolve: caminho → view
+from django.test import TestCase           # Classe base para testes Django
+from django.urls import reverse, resolve   # reverse: nome → path | resolve: path → view
+from receitas import views                 # Módulo de views, usado para comparar a função resolvida
 
 class receitasHomeUrlsTest(TestCase):
     def test_home_url_resolve(self):

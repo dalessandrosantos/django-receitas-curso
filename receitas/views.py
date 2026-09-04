@@ -26,10 +26,10 @@ def categoria(request, categoria_id):
     })
 
 def receita(request, id):
-    receita = Receita.objects.filter(
-            pk=id,
-            publicado=True,
-        ).order_by('-id').first()
+    # receita = Receita.objects.filter(
+    #         pk=id,
+    #         publicado=True,
+    #     ).order_by('-id').first()
 
     receita = get_object_or_404(
         Receita, 
@@ -41,3 +41,4 @@ def receita(request, id):
         'receita': receita,
         'is_detail_page': True,
     })
+

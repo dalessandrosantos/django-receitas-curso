@@ -1,7 +1,7 @@
-from django.test import TestCase
-from receitas.models import Categoria, Receita
-from django.core.files.uploadedfile import SimpleUploadedFile
-from django.contrib.auth.models import User
+from django.test import TestCase                              # Classe base para testes Django
+from django.contrib.auth.models import User                    # Model de usuário, usado como autor
+from django.core.files.uploadedfile import SimpleUploadedFile  # Simula upload de arquivo (campo capa)
+from receitas.models import Categoria, Receita                 # Models testados
 
 
 class CategoriaModelTest(TestCase):
